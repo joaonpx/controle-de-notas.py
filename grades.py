@@ -1,3 +1,5 @@
 def display(list):
+  index = 0
   for grade in list:
-    print(f"[{list.index(grade)}]: {grade}")
+    index += 1
+    print(f"[{index}]: {grade}")
