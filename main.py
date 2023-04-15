@@ -34,7 +34,7 @@ while option != 0:
           
           gradeSelection = input(f"\nDigite o índice da nota que deseja excluir, ALL para exluir todas as notas ou CANCEL para cancelar: ")
 
-          # verificando se o úsuario quer excluir todas ou só uma nota
+          # verificando se o úsuario quer excluir todas as notas, uma só ou cancelar
           if gradeSelection.upper() == "ALL":
             # excluindo todas as notas
             grades.clear()
