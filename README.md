@@ -1,5 +1,5 @@
 <h1 align="center">
-  <p>🏂 Inscrição - FIAP Esportes</p>
+  <p>🗃️ Controle de Notas</p>
 </h1>
 
 ## 🚀 Tecnologias
