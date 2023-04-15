@@ -86,5 +86,6 @@ while option != 0:
         else:
           print("Nenhuma nota cadastrada! \nSelecione a opção 1 para inserir uma nova nota.")
     
+    # opção inválida
     elif option > 4:
         print(f"\nOpção inválida! Tente novamente.")
