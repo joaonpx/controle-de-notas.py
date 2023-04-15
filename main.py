@@ -38,8 +38,8 @@ while option != 0:
           if gradeSelection.upper() == "ALL":
             # excluindo todas as notas
             grades.clear()
-          
-            print(f"\nTodas as {gradesAmount} notas foram excluídas com sucesso! 🎉")
+            
+            print(f"\nTodas as notas foram excluídas com sucesso! 🎉")
 
           elif gradeSelection.upper() == "CANCEL":
             print(f"\nExclusão cancelada!")
@@ -48,7 +48,7 @@ while option != 0:
             # deletando a nota escolhida
             del grades[int(gradeSelection)]
 
-            print(f"\nNota {gradeSelection} excluída com sucesso! 🎉")
+            print(f"\nNota excluída com sucesso! 🎉")
             
         else:
           print("Nenhuma nota cadastrada! \nSelecione a opção 1 para inserir uma nova nota.")
