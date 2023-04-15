@@ -25,7 +25,7 @@ while option != 0:
 
         # verificando se existem notas na lista
         if gradesAmount > 0:
-          print("Notas:\n")
+          print(f"Notas cadastradas: {gradesAmount}\n")
 
           # exibindo todas as notas com índice
           display(grades)
@@ -40,13 +40,16 @@ while option != 0:
             grades.clear()
           
             print(f"\nTodas as {gradesAmount} notas foram excluídas com sucesso! 🎉")
+
           elif gradeSelection.upper() == "CANCEL":
             print(f"\nExclusão cancelada!")
+
           else:
             # deletando a nota escolhida
             del grades[int(gradeSelection)]
 
-            print("\nNota excluída com sucesso! 🎉")
+            print(f"\nNota {gradeSelection} excluída com sucesso! 🎉")
+            
         else:
           print("Nenhuma nota cadastrada! \nSelecione a opção 1 para inserir uma nova nota.")
     
