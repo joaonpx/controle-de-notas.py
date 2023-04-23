@@ -15,7 +15,7 @@ while option != 0:
         print("\n------------------------- INSERIR NOTA -------------------------\n")
 
         # adicionando nota a lista
-        grades.append(input("Digite a nota: "))
+        grades.append(int(input("Digite a nota: ")))
     
     # 2 opção
     elif option == 2:
@@ -82,7 +82,7 @@ while option != 0:
           average = sum(grades) / gradesAmount
 
           # exibindo média
-          print(f"A média é de: {average}")
+          print(f"A média é de: {average:.2f}")
         else:
           print("Nenhuma nota cadastrada! \nSelecione a opção 1 para inserir uma nova nota.")
     
