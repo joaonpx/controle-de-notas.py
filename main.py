@@ -6,7 +6,9 @@ option = -1
 
 while option != 0:
     print("\n----------------------------- MENU -----------------------------\n")
-    print("1 - Inserir nota \n2 - Excluir nota \n3 - Exibir notas \n4 - Calcular média \n0 - Sair")
+    print(
+        "1 - Inserir nota \n2 - Excluir nota \n3 - Exibir notas \n4 - Calcular média \n0 - Sair"
+    )
 
     option = int(input("\nEscolha uma opção: "))
 
@@ -15,8 +17,8 @@ while option != 0:
         print("\n------------------------- INSERIR NOTA -------------------------\n")
 
         # adicionando nota a lista
-        grades.append(int(input("Digite a nota: ")))
-    
+        grades.append(float(input("Digite a nota: ")))
+
     # 2 opção
     elif option == 2:
         print("\n--------------------- EXCLUIR NOTA ----------------------\n")
@@ -25,34 +27,44 @@ while option != 0:
 
         # verificando se existem notas na lista
         if gradesAmount > 0:
-          print(f"Notas cadastradas: {gradesAmount}\n")
+            print(f"Notas cadastradas: {gradesAmount}\n")
 
-          # exibindo todas as notas com índice
-          display(grades)
+            # exibindo todas as notas com índice
+            display(grades)
 
-          print("\nÍNDICE = NÚMERO QUE ESTÁ ENTRE []")
-          
-          gradeSelection = input(f"\nDigite o índice da nota que deseja excluir, ALL para exluir todas as notas ou CANCEL para cancelar: ")
+            print("\nÍNDICE = NÚMERO QUE ESTÁ ENTRE []")
 
-          # verificando se o úsuario quer excluir todas as notas, uma só ou cancelar
-          if gradeSelection.upper() == "ALL":
-            # excluindo todas as notas
-            grades.clear()
-            
-            print(f"\nTodas as notas foram excluídas com sucesso! 🎉")
+            gradeSelection = input(
+                f"\nDigite o índice da nota que deseja excluir, ALL para exluir todas as notas ou CANCEL para cancelar: "
+            )
 
-          elif gradeSelection.upper() == "CANCEL":
-            print(f"\nExclusão cancelada!")
+            # verificando se o úsuario quer excluir todas as notas, uma só ou cancelar
+            if gradeSelection.upper() == "ALL":
+                # excluindo todas as notas
+                grades.clear()
 
-          else:
-            # deletando a nota escolhida
-            del grades[int(gradeSelection)]
+                print(f"\nTodas as notas foram excluídas com sucesso! 🎉")
 
-            print(f"\nNota excluída com sucesso! 🎉")
-            
+            elif gradeSelection.upper() == "CANCEL":
+                print(f"\nExclusão cancelada!")
+
+            elif gradeSelection.isnumeric():
+                if gradeSelection in grades.indexList:
+                    # deletando a nota escolhida
+                    del grades[int(gradeSelection)]
+
+                    print(f"\nNota excluída com sucesso! 🎉")
+                else:
+                    print(f"\nNota não cadastrada!")
+
+            else:
+                print(f"\nNota não cadastrada!")
+
         else:
-          print("Nenhuma nota cadastrada! \nSelecione a opção 1 para inserir uma nova nota.")
-    
+            print(
+                "Nenhuma nota cadastrada! \nSelecione a opção 1 para inserir uma nova nota."
+            )
+
     # 3 opção
     elif option == 3:
         print("\n------------------------- NOTAS -------------------------\n")
@@ -61,14 +73,16 @@ while option != 0:
 
         # verificando se existem notas na lista
         if gradesAmount > 0:
-          # exibindo total de notas
-          print(f"Notas cadastradas: {gradesAmount}\n")
+            # exibindo total de notas
+            print(f"Notas cadastradas: {gradesAmount}\n")
 
-          # exibindo todas as notas com índice
-          display(grades)
+            # exibindo todas as notas com índice
+            display(grades)
 
         else:
-          print("Nenhuma nota cadastrada! \nSelecione a opção 1 para inserir uma nova nota.")
+            print(
+                "Nenhuma nota cadastrada! \nSelecione a opção 1 para inserir uma nova nota."
+            )
 
     # 4 opção
     elif option == 4:
@@ -78,14 +92,16 @@ while option != 0:
 
         # verificando se existem notas na lista
         if gradesAmount > 0:
-          # calculando média
-          average = sum(grades) / gradesAmount
+            # calculando média
+            average = sum(grades) / gradesAmount
 
-          # exibindo média
-          print(f"A média é de: {average:.2f}")
+            # exibindo média
+            print(f"A média é de: {average:.2f}")
         else:
-          print("Nenhuma nota cadastrada! \nSelecione a opção 1 para inserir uma nova nota.")
-    
+            print(
+                "Nenhuma nota cadastrada! \nSelecione a opção 1 para inserir uma nova nota."
+            )
+
     # opção inválida
     elif option > 4:
         print(f"\nOpção inválida! Tente novamente.")
